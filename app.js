@@ -86,9 +86,9 @@ app.get("/movies/:movieId/", async (request, response) => {
   response.send(movieArray);
 });
 // Put Method
-app.put("/movies/:movieId/", async (request, require) => {
+app.put("/movies/:movieId/", async (request, response) => {
   const { movieId } = request.params;
-  const { directorId, movieName, leadActor } = requestBody;
+  const { directorId, movieName, leadActor } = request.body;
   const movieQuery = `
     UPDATE 
         movie
